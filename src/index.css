@@ -31,7 +31,7 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  background-color: white;
+  background-color: #181735 !important;
 }
 
 ul[class],
@@ -53,8 +53,63 @@ article > * + * {
 }
 
 input,
-button,
 textarea,
 select {
   font: inherit;
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+/* a {
+  color: #ffffff !important;
+  border: rgba(63, 15, 223, 1) solid;
+  border-radius: 52px;
+  padding: 10px 40px;
+}
+
+a:active {
+  background: linear-gradient(
+    92.99deg,
+    #20d4b9 -41.39%,
+    #516fd1 54.73%,
+    #8209ea 141.33%
+  );
+  color: #ffffff;
+}
+a:visited {
+  background: linear-gradient(
+    92.99deg,
+    #20d4b9 -41.39%,
+    #516fd1 54.73%,
+    #8209ea 141.33%
+  );
+  color: #ffffff;
+}
+a:focus {
+  background: linear-gradient(
+    92.99deg,
+    #20d4b9 -41.39%,
+    #516fd1 54.73%,
+    #8209ea 141.33%
+  );
+  color: #ffffff;
+} */
+
+.copy {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  /* font-size: 20px; */
+  color: #7681ab;
+}
+
+.link {
+  border: none;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  /* font-size: 20px; */
+  text-decoration-line: underline;
+
+  color: #95a3d6 !important;
 }

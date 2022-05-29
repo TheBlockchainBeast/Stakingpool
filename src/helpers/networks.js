@@ -26,6 +26,15 @@ export const networkConfigs = {
     currencySymbol: "ETH",
     rpcUrl: "http://127.0.0.1:7545",
   },
+  "0x7f08": {
+    chainId: 32520,
+    chainName: "Bitgert Chain",
+    currencyName: "bitgert",
+    currencySymbol: "bitgert",
+    rpcUrl: "https://chainrpc.com",
+    blockExplorerUrl: "https://brisescan.com/",
+    wrapped: "0x0eb9036cbE0f052386f36170c6b07eF0a0E3f710",
+  },
   "0xa86a": {
     chainId: 43114,
     chainName: "Avalanche Mainnet",

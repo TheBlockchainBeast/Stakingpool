@@ -17,6 +17,12 @@ export const AvaxLogo = () => (
   </svg>
 );
 
+export const BGLogo = () => (
+  <svg width="25" height="25" viewBox="0 0 30 30">
+    <img src="../public/bitgert.png" alt="bitgert" />
+  </svg>
+);
+
 export const BSCLogo = () => (
   <svg
     width="25"

@@ -11,17 +11,19 @@ import { connectors } from "./config";
 const styles = {
   account: {
     height: "42px",
-    padding: "0 15px",
+    padding: "0 30px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     width: "fit-content",
-    borderRadius: "12px",
-    backgroundColor: "rgb(244, 244, 244)",
+    borderRadius: "50px",
+    border: "none",
+    background:
+      "linear-gradient(92.99deg, #20d4b9 -41.39%, #516fd1 54.73%, #8209ea 141.33%)",
     cursor: "pointer",
   },
   text: {
-    color: "#21BF96",
+    color: "#ffffff",
   },
   connector: {
     alignItems: "center",
@@ -53,7 +55,7 @@ function Account() {
     return (
       <>
         <div onClick={() => setIsAuthModalVisible(true)}>
-          <p style={styles.text}>Authenticate</p>
+          <button style={styles.account}>Connect</button>
         </div>
         <Modal
           visible={isAuthModalVisible}
@@ -63,8 +65,9 @@ function Account() {
             padding: "15px",
             fontSize: "17px",
             fontWeight: "500",
+            color: "#ffffff",
           }}
-          style={{ fontSize: "16px", fontWeight: "500" }}
+          style={{ fontSize: "16px", fontWeight: "500", color: "#ffffff" }}
           width="340px"
         >
           <div
@@ -76,9 +79,15 @@ function Account() {
               fontSize: "20px",
             }}
           >
-            Connect Wallet
+            Connect
           </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              color: "#ffffff",
+            }}
+          >
             {connectors.map(({ title, icon, connectorId }, key) => (
               <div
                 style={styles.connector}
@@ -94,7 +103,9 @@ function Account() {
                 }}
               >
                 <img src={icon} alt={title} style={styles.icon} />
-                <Text style={{ fontSize: "14px" }}>{title}</Text>
+                <Text style={{ fontSize: "14px", color: "#ffffff" }}>
+                  {title}
+                </Text>
               </div>
             ))}
           </div>
@@ -136,7 +147,7 @@ function Account() {
           fontSize: "17px",
           fontWeight: "500",
         }}
-        style={{ fontSize: "16px", fontWeight: "500" }}
+        style={{ fontSize: "16px", fontWeight: "500", color: "#ffffff" }}
         width="400px"
       >
         Account
@@ -144,6 +155,7 @@ function Account() {
           style={{
             marginTop: "10px",
             borderRadius: "1rem",
+            background: "#1F1E3E",
           }}
           bodyStyle={{ padding: "15px" }}
         >
@@ -180,7 +192,7 @@ function Account() {
             setIsModalVisible(false);
           }}
         >
-          Disconnect Wallet
+          Disconnect
         </Button>
       </Modal>
     </>

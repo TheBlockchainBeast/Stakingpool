@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, Dropdown, Button } from "antd";
 import { DownOutlined } from "@ant-design/icons";
-import { AvaxLogo, PolygonLogo, BSCLogo, ETHLogo } from "./Logos";
+import { AvaxLogo, PolygonLogo, BSCLogo, ETHLogo, BGLogo } from "./Logos";
 import { useChain, useMoralis } from "react-moralis";
 
 const styles = {
@@ -30,6 +30,11 @@ const menuItems = [
     key: "0x539",
     value: "Local Chain",
     icon: <ETHLogo />,
+  },
+  {
+    key: "0x7f08",
+    value: "Bitgert Chain",
+    icon: <BGLogo />,
   },
   {
     key: "0x3",

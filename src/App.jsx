@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Account from "components/Account/Account";
 // import Chains from "components/Chains";
-// import TokenPrice from "components/TokenPrice";
+import TokenPrice from "components/TokenPrice";
 import ERC20Balance from "components/ERC20Balance";
 import ERC20Transfers from "components/ERC20Transfers";
 import DEX from "components/DEX";
@@ -18,9 +18,8 @@ import { Layout, Tabs } from "antd";
 import "antd/dist/antd.css";
 // import NativeBalance from "components/NativeBalance";
 import "./style.css";
-import Presale from "components/Presale/Presale";
+import Pools from "components/Pools/Pools";
 import Staking from "components/Staking/Staking";
-import Details from "components/Details/Details";
 import Contract from "components/Contract/Contract";
 // import Text from "antd/lib/typography/Text";
 import Ramper from "components/Ramper";
@@ -33,14 +32,14 @@ const styles = {
     justifyContent: "center",
     fontFamily: "Roboto, sans-serif",
     color: "#ffffff",
-    background: "#181735",
+    background: "#062D18",
     marginTop: "130px",
   },
   header: {
     position: "fixed",
     zIndex: 1,
     width: "100%",
-    background: "#181735",
+    background: "#062D18",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -71,19 +70,19 @@ const App = ({ isServerInfo }) => {
 
   return (
     <Layout
-      style={{ height: "100vh", overflow: "auto", background: "#181735" }}
+      style={{ height: "100vh", overflow: "auto", background: "#062D18" }}
     >
       <Router>
         <Header style={styles.header}>
           <Logo />
           <div style={styles.headerRight}>
             {/* <Chains /> */}
-            {/* <TokenPrice
-              address="0x71946a5C9dA7C95ee804a9BE561EC15A3F286A7D"
-              chain="0x1"
-              image="https://brisepad.co/assests/white2.png"
+            <TokenPrice
+              address="0xdcb624c870d73cdd0b3345762977cb14de598cd0"
+              chain="bsc"
+              image="https://h2finance.io/img/logo-original.png"
               size="30px"
-            /> */}
+            />
             {/* <NativeBalance /> */}
             <MenuItems />
             <Account />
@@ -92,14 +91,11 @@ const App = ({ isServerInfo }) => {
 
         <div style={styles.content}>
           <Switch>
-            <Route exact path="/presale">
-              <Presale isServerInfo={isServerInfo} />
+            <Route exact path="/pools">
+              <Pools isServerInfo={isServerInfo} />
             </Route>
             <Route path="/wallet">
               <Wallet />
-            </Route>
-            <Route path="/details">
-              <Details />
             </Route>
             <Route path="/staking">
               <Staking />
@@ -136,10 +132,10 @@ const App = ({ isServerInfo }) => {
               <Contract />
             </Route>
             <Route path="/">
-              <Redirect to="/presale" />
+              <Redirect to="/pools" />
             </Route>
             <Route path="/home">
-              <Redirect to="/presale" />
+              <Redirect to="/pools" />
             </Route>
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>
@@ -158,7 +154,7 @@ const App = ({ isServerInfo }) => {
           }}
         >
           <p className="copy">
-            Copyright @ 2022. All Rights Reserved by Brisepad
+            Copyright @ 2022. All Rights Reserved by H2finance
           </p>
           <div>
             <a href="" className="link" style={{ marginRight: "10px" }}>
@@ -176,7 +172,9 @@ const App = ({ isServerInfo }) => {
 
 export const Logo = () => (
   <div style={{ display: "flex" }}>
-    <img src="/logo.png" width="150" alt="" />
+    <a href="/">
+      <img src="/logo.png" width="150" alt="" />
+    </a>
   </div>
 );
 

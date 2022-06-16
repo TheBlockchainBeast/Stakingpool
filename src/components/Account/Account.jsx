@@ -19,7 +19,7 @@ const styles = {
     borderRadius: "50px",
     border: "none",
     background:
-      "linear-gradient(92.99deg, #20d4b9 -41.39%, #516fd1 54.73%, #8209ea 141.33%)",
+      "linear-gradient(92.99deg, #0F6939 -41.39%, #ADC737 54.73%, #F0AF5C 141.33%)",
     cursor: "pointer",
   },
   text: {
@@ -66,6 +66,7 @@ function Account() {
             fontSize: "17px",
             fontWeight: "500",
             color: "#ffffff",
+            backgroundColor: "#062D18",
           }}
           style={{ fontSize: "16px", fontWeight: "500", color: "#ffffff" }}
           width="340px"
@@ -94,7 +95,10 @@ function Account() {
                 key={key}
                 onClick={async () => {
                   try {
-                    await authenticate({ provider: connectorId });
+                    await authenticate({
+                      signingMessage: "H2Finance building future together.",
+                      provider: connectorId,
+                    });
                     window.localStorage.setItem("connectorId", connectorId);
                     setIsAuthModalVisible(false);
                   } catch (e) {
@@ -146,6 +150,7 @@ function Account() {
           padding: "15px",
           fontSize: "17px",
           fontWeight: "500",
+          backgroundColor: "#062D18",
         }}
         style={{ fontSize: "16px", fontWeight: "500", color: "#ffffff" }}
         width="400px"
@@ -155,7 +160,8 @@ function Account() {
           style={{
             marginTop: "10px",
             borderRadius: "1rem",
-            background: "#1F1E3E",
+            background: "#0F6939",
+            border: "solid 1px #E3EBBD",
           }}
           bodyStyle={{ padding: "15px" }}
         >
@@ -163,13 +169,14 @@ function Account() {
             avatar="left"
             size={6}
             copyable
-            style={{ fontSize: "20px" }}
+            style={{ fontSize: "20px", color: "#fff" }}
           />
           <div style={{ marginTop: "10px", padding: "0 10px" }}>
             <a
               href={`${getExplorer(chainId)}/address/${account}`}
               target="_blank"
               rel="noreferrer"
+              style={{ color: "#F0AF5C" }}
             >
               <SelectOutlined style={{ marginRight: "5px" }} />
               View on Explorer
@@ -185,6 +192,8 @@ function Account() {
             borderRadius: "0.5rem",
             fontSize: "16px",
             fontWeight: "500",
+            backgroundColor: "#0F6939",
+            border: "solid 1px #E3EBBD",
           }}
           onClick={async () => {
             await logout();

@@ -4,7 +4,7 @@ import App from "./App";
 import { MoralisProvider } from "react-moralis";
 import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import Presale from "components/Presale/Presale";
+import Pools from "components/Pools/Pools";
 
 /** Get your free Moralis Account https://moralis.io/ */
 
@@ -32,7 +32,7 @@ const Application = () => {
           justifyContent: "center",
         }}
       >
-        <Presale />
+        <Pools />
       </div>
     );
   }

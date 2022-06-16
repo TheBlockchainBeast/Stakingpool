@@ -11,9 +11,9 @@ function Balance() {
 
   return (
     <Statistic
-      title="BPAD Balance"
-      value={data && Math.floor(Moralis.Units.FromWei(data, 8))}
-      suffix="BPAD"
+      title="YFIH2 Balance"
+      value={data && Math.floor(Moralis.Units.FromWei(data, 18))}
+      suffix="YFIH2"
     />
   );
 }

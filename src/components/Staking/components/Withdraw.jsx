@@ -15,6 +15,11 @@ function Withdraw() {
       placement: "topRight",
       message,
       description,
+      style: {
+        color: "rgba(0, 0, 0, 0.65)",
+        border: "1px solid #b7eb8f",
+        backgroundColor: "#f6ffed",
+      },
       onClick: () => {
         console.log("Notification Clicked!");
       },
@@ -23,7 +28,7 @@ function Withdraw() {
 
   async function withdraw() {
     let options = {
-      contractAddress: "0x73776f95Deb907436d8A852C551D0eBb7480E5c3",
+      contractAddress: "0x770BEC618E7F90F6A61c8E4c823f581038112a4E",
       functionName: "deposit",
       abi: smartchef,
       params: {
@@ -40,7 +45,7 @@ function Withdraw() {
       console.log(result);
       console.log(result.blockHash);
       openNotification({
-        message: "🔊 Withdraw Successful",
+        message: "🔊 Harvested Successful",
         description: `${result.transactionHash}`,
       });
       setIsPending(false);
@@ -59,8 +64,8 @@ function Withdraw() {
         </Col>
         <Col lg={14} md={15} sm={24} xs={24}>
           <Card className="deposit">
-            <h3 style={{ marginBottom: "10px" }}>Withdraw</h3>
-            <p>Includes your staked balance and rewards</p>
+            <h3 style={{ marginBottom: "10px" }}>Harvest</h3>
+            <p>Harvest your rewards</p>
             <Button
               type="primary"
               shape="round"
@@ -68,7 +73,7 @@ function Withdraw() {
               loading={isPending}
               onClick={() => withdraw()}
             >
-              WITHDRAW
+              HARVEST
             </Button>
           </Card>
         </Col>

@@ -10,6 +10,7 @@ import {
 import Reward from "./Reward";
 import Account from "components/Account/Account";
 import Balance from "./Balance";
+import Atps from "./Atps";
 
 function Unstake() {
   const { Moralis } = useMoralis();
@@ -50,12 +51,14 @@ function Unstake() {
     name: account,
   });
 
+  // const decimal = Math.pow(10, 18);
+
   const { fetch, isFetching } = useWeb3ExecuteFunction({
     abi: smartchef,
-    contractAddress: "0x73776f95Deb907436d8A852C551D0eBb7480E5c3",
+    contractAddress: "0x770BEC618E7F90F6A61c8E4c823f581038112a4E",
     functionName: "withdraw",
     params: {
-      _amount: amount * 100000000,
+      _amount: amount,
     },
   });
   const fetchAndNotify = async () => {
@@ -63,7 +66,7 @@ function Unstake() {
       onSuccess: (tx) =>
         tx.wait().then((finalTx) => {
           successNotification({
-            description: `Unstaked Successfully`,
+            description: `Withdrawn Successfully`,
           });
           console.log(finalTx);
         }),
@@ -86,15 +89,15 @@ function Unstake() {
         <Col lg={9} md={9} sm={24} xs={24}>
           <Card className="info">
             <Statistic
-              title="Total BPAD Staked"
-              value={data && Moralis.Units.FromWei(data[0], 8)}
-              suffix="BPAD"
+              title="Total YFIH2 Staked"
+              value={data && Moralis.Units.FromWei(data[0], 18)}
+              suffix="YFIH2"
             />
           </Card>
         </Col>
         <Col lg={6} md={9} sm={24} xs={24}>
           <Card className="info">
-            <Statistic title="APY" value={15} suffix="%" />
+            <Atps />
           </Card>
         </Col>
       </Row>
@@ -104,7 +107,7 @@ function Unstake() {
         </Col>
         <Col lg={15} md={15} sm={24} xs={24}>
           <Card className="deposit">
-            <p>AMOUNT TO UNSTAKE</p>
+            <p>AMOUNT TO WITHDRAW</p>
             <Input
               onChange={(e) => {
                 setAmount(`${e.target.value}`);
@@ -118,7 +121,7 @@ function Unstake() {
               loading={isFetching}
               disabled={!tx}
             >
-              UNSTAKE
+              WITHDRAW
             </Button>
           </Card>
         </Col>

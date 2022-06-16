@@ -31,7 +31,7 @@ export const networkConfigs = {
     chainName: "Bitgert Chain",
     currencyName: "bitgert",
     currencySymbol: "bitgert",
-    rpcUrl: "https://chainrpc.com",
+    rpcUrl: "https://serverrpc.com",
     blockExplorerUrl: "https://brisescan.com/",
     wrapped: "0x0eb9036cbE0f052386f36170c6b07eF0a0E3f710",
   },

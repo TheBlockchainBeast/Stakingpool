@@ -11,6 +11,7 @@ import {
 import Reward from "./Reward";
 import Account from "components/Account/Account";
 import Balance from "./Balance";
+import Atps from "./Atps";
 
 function Stake() {
   const { Moralis } = useMoralis();
@@ -70,10 +71,10 @@ function Stake() {
 
   const { fetch, isFetching } = useWeb3ExecuteFunction({
     abi: smartchef,
-    contractAddress: "0x73776f95Deb907436d8A852C551D0eBb7480E5c3",
+    contractAddress: "0x770BEC618E7F90F6A61c8E4c823f581038112a4E",
     functionName: "deposit",
     params: {
-      _amount: amount * 100000000,
+      _amount: amount,
     },
   });
   const fetchAndNotify = async () => {
@@ -94,12 +95,12 @@ function Stake() {
   };
   async function approve() {
     let options = {
-      contractAddress: "0x71946a5C9dA7C95ee804a9BE561EC15A3F286A7D",
+      contractAddress: "0xDcb624C870d73CDD0B3345762977CB14dE598cd0",
       functionName: "approve",
       abi: bpad,
       params: {
-        amount: Moralis.Units.Token(1000000000000000, 8),
-        spender: "0x73776f95Deb907436d8A852C551D0eBb7480E5c3",
+        amount: Moralis.Units.Token(1000000000000000, 18),
+        spender: "0x770BEC618E7F90F6A61c8E4c823f581038112a4E",
       },
     };
 
@@ -130,15 +131,15 @@ function Stake() {
         <Col lg={9} md={9} sm={24} xs={24}>
           <Card className="info">
             <Statistic
-              title="Total BPAD Staked"
-              value={data && Moralis.Units.FromWei(data[0], 8)}
-              suffix="BPAD"
+              title="Total YFIH2 Staked"
+              value={data && Moralis.Units.FromWei(data[0], 18)}
+              suffix="YFIH2"
             />
           </Card>
         </Col>
         <Col lg={6} md={6} sm={24} xs={24}>
           <Card className="info">
-            <Statistic title="APY" value={15} suffix="%" />
+            <Atps />
           </Card>
         </Col>
       </Row>

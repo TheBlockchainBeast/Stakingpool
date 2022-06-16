@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import { Menu } from "antd";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 function MenuItems() {
   const { pathname } = useLocation();
@@ -15,17 +15,17 @@ function MenuItems() {
         fontSize: "17px",
         fontWeight: "500",
         justifyContent: "center",
-        backgroundColor: "#181735",
+        backgroundColor: "#062D18",
         border: "none",
       }}
       defaultSelectedKeys={[pathname]}
     >
-      <Menu.Item key="/presale">
-        <NavLink to="/presale">Project</NavLink>
-      </Menu.Item>
-      <Menu.Item key="/staking">
+      {/* <Menu.Item key="/staking">
+        <NavLink to="/staking">Project</NavLink>
+      </Menu.Item> */}
+      {/* <Menu.Item key="/staking">
         <NavLink to="/staking">Staking</NavLink>
-      </Menu.Item>
+      </Menu.Item> */}
     </Menu>
   );
 }

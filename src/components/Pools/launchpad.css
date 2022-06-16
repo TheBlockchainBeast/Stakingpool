@@ -13,7 +13,7 @@ h3 {
   font-size: 16px;
   line-height: 19px;
   letter-spacing: 0.02em;
-  color: #7681ab;
+  color: #ffffff;
 }
 
 p.desc {
@@ -43,17 +43,40 @@ a.closed {
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
+  margin-right: 10px;
+}
+a.coming {
+  background: #a68500;
+  border-radius: 20px;
+  padding: 4px 16px;
+  color: #ebd16b !important;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 10px;
+}
+a.open {
+  background: #062d18;
+  border-radius: 20px;
+  padding: 4px 16px;
+  color: #b4e197 !important;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 a.brise {
-  background: rgba(63, 15, 223, 0.3);
+  background: #e3ebbd;
   border-radius: 20px;
   padding: 4px 16px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  color: #dcdcdc !important;
+  color: #0f6939 !important;
 }
 
 .swap {
@@ -107,7 +130,7 @@ a.brise {
 }
 .icons .icon {
   margin-top: 10px;
-  background: #4a5074;
+  background: #f0af5c !important;
   margin-right: 5px;
 }
 
@@ -120,22 +143,22 @@ a.brise {
   border-radius: 67px;
   color: #ffffff !important;
   padding-left: 20px;
-  border: solid #3e4164;
+  border: solid #f0af5c;
   text-align: center;
 }
 
 input::placeholder {
-  color: #3e4164 !important;
+  color: #f0af5c !important;
   padding-left: 20px;
 }
 
 .ant-pagination-item {
   border: none;
-  background-color: #1f1e3e;
+  background-color: #0f6939;
 }
 .ant-pagination-item-active {
   font-weight: 500;
-  background: #3f0fdf;
+  background: #adc737;
   border: none;
 }
 
@@ -145,7 +168,7 @@ input::placeholder {
 }
 .ant-pagination-prev .ant-pagination-item-link,
 .ant-pagination-next .ant-pagination-item-link {
-  background-color: #1f1e3e;
+  background-color: #0f6939;
   border: none;
   border-radius: 2px;
   transition: all 0.3s;
@@ -161,7 +184,7 @@ input::placeholder {
 }
 .card:hover {
   box-shadow: 0 0.5rem 1.2rem rgb(189 197 209 / 10%);
-  border: 1px solid #3f0fdf;
+  border: 1px solid #adc737;
 }
 
 .projects {

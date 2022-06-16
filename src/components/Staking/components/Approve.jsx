@@ -31,7 +31,7 @@ function Approve() {
     const { amount } = tx;
 
     let options = {
-      contractAddress: "0x71946a5C9dA7C95ee804a9BE561EC15A3F286A7D",
+      contractAddress: "0xDcb624C870d73CDD0B3345762977CB14dE598cd0",
       functionName: "approve",
       abi: brisepad,
       params: { "": [account, amount] },
@@ -47,7 +47,7 @@ function Approve() {
       console.log(result);
       console.log(result.blockHash);
       openNotification({
-        message: "🔊 Stake Successful",
+        message: "🔊 Approved Successful",
         description: `${result.transactionHash}`,
       });
       setIsPending(false);

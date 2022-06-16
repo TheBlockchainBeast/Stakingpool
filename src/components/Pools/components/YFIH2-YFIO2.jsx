@@ -6,14 +6,14 @@ import {
   GithubOutlined,
 } from "@ant-design/icons";
 import "../launchpad.css";
-import ProgressBar from "components/Details/components/ProgressBar";
 
 const styles = {
   card: {
-    background: "#1F1E3E",
+    background: "#0F6939",
     borderRadius: "12px",
     margin: "0px 40px 40px 0px",
     color: "#ffffff",
+    width: "100%",
   },
   text: {
     color: "#ffffff",
@@ -22,16 +22,16 @@ const styles = {
 
 export default function Cards() {
   return (
-    <a href="/details">
+    <a href="/staking">
       <Card style={styles.card} className="card">
         <Row>
           <Col span={8}>
-            <Avatar size={80} src="/bayc.jpeg" />
+            <Avatar shape="square" size={70} src="/yfio2-yfih2.svg" />
           </Col>
           <Col span={12}>
             <div>
-              <h1>TestToken</h1>
-              <h3>TST</h3>
+              <h1>Earn YFIO2</h1>
+              <h3>Stake YFIH2</h3>
             </div>
             <div className="icons">
               <Avatar className="icon" size={28} icon={<TwitterOutlined />} />
@@ -40,28 +40,20 @@ export default function Cards() {
               <Avatar className="icon" size={28} icon={<GithubOutlined />} />
             </div>
             <div className="buttons">
-              <a className="closed">Closed</a>
-              <a className="brise">BRISE</a>
+              <a className="open">Open</a>
+              <a className="brise">BSC</a>
             </div>
           </Col>
         </Row>
         <p className="desc">
-          TestToken is designed to help fuel the future of mass-market
-          blockchain applications building on Bitgert chain We aim to be the
-          largest decentralized...
+          H2.finance was born to collaborate and help on the Sustainable
+          Development Goals, SDGs, from the 2030 agenda objectives of United
+          Nations.
         </p>
-        <div className="swap">
-          <p>Swap Rate</p>
-          <p>1 BRISE = 1200 TST</p>
-        </div>
-        <div className="cap">
-          <p>Cap</p>
-          <p>50,000 BRISE</p>
-        </div>
-        <div className="progress">
-          <p>Progress</p>
-          <ProgressBar />
-        </div>
+        {/* <div className="swap">
+          <p>Total Staked</p>
+          <p>0</p>
+        </div> */}
       </Card>
     </a>
   );
